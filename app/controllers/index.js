@@ -4,7 +4,7 @@ import { get, set } from '@ember/object';
 
 export default Controller.extend({
   likes: 0,
-  photographer: {},
+  photographer: null,
   photoUrl: 'http://placehold.it/200x200',
 
   unsplash: service(),
