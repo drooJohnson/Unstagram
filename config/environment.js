@@ -18,8 +18,16 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      // Hard-coding credentials is BAD and we would NEVER do this in a production app.
+      // This is ONLY done to make setup of this repo as easy as possible because
+      // the purpose of this project is not to test how well a candidate can set up
+      // a dev environment.
+      unsplash: {
+        applicationId: '25475',
+        access: 'd51e66b8c39a659bee4fb4b8b9871b1154098ae440afb921e6378e7dbc9affb2',
+        secret: 'b1a25efbe3dbd0dbf7faa2d456f50f9a1cc88115fd4038216c327a439781d771',
+        callbackUrl: 'localhost'
+      }
     }
   };
 
