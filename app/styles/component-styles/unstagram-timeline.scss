@@ -1,0 +1,11 @@
+$avatar-size: 30px;
+.main-img {
+  width: 400px;
+}
+
+.photographer-img {
+  border-radius: 50%;
+  height: $avatar-size;
+  margin-right: 8px;
+  width: $avatar-size;
+}

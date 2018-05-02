@@ -1,0 +1,25 @@
+<div class="layout-column layout-align-start-center">
+  {{#paper-card as |card|}}
+    {{#card.title}}
+      <div class="layout-row layout-align-start-center">
+        <img class="photographer-img" src={{photographer.profile_image.small}} />
+        {{photographer.name}}
+      </div>
+    {{/card.title}}
+
+    {{#card.content}}
+      <img class="main-img" src={{photoUrl}} />
+    {{/card.content}}
+
+    {{#card.actions}}
+      <div class="layout-row layout-align-end-center">
+        ❤️ {{pluralize likes "like"}}
+      </div>
+    {{/card.actions}}
+  {{/paper-card}}
+  {{paper-button
+    label="Get a photo!"
+    raised=true
+    onClick=(action getPhoto)
+  }}
+</div>
