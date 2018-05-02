@@ -1,1 +1,12 @@
 {{outlet}}
+
+<div class="layout-row layout-align-center-start">
+  <div class="flex-50">
+    {{unstagram-timeline
+      likes=likes
+      photoUrl=photoUrl
+      photographer=photographer
+      getPhoto=(action "getPhoto")
+    }}
+  </div>
+</div>
