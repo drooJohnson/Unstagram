@@ -1,56 +1,53 @@
-# unstagram
+# Unstagram
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+![screencap](screencap.png)
 
-## Prerequisites
+## Assignment
+
+Your assignment is to remove the "Get a Photo!" button and replace it with infinite-scroll functionality. The app should load more images and append them to the bottom of the `timeline` when the user reaches the bottom of the page. You may modify the existing project in whatever way you see fit, however we do ask that you refrain from using any kind of infinite-scroll plugin.
+
+Feel free to dress the page up with UX/UI improvements at your own discretion–this is not required.
+
+### Submission
+Once you are finished, open a pull-request to [PartCycleTech/unstagram](https://github.com/PartCycleTech/Unstagram/compare)
+
+
+## Setup
+
+### Prerequisites
 
 You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
+* [yarn](https://yarnpkg.com/en/docs/install)
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
-## Installation
+### Installation
 
-* `git clone <repository-url>` this repository
+* Fork the project
+* `git clone https://github.com/<your-username>/unstagram.git`
 * `cd unstagram`
-* `npm install`
+* `yarn`
 
-## Running / Development
+### Running / Development
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
+#### Linting
 
 * `npm run lint:js`
 * `npm run lint:js -- --fix`
 
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
 * [ember.js](https://emberjs.com/)
 * [ember-cli](https://ember-cli.com/)
+* [ember-paper](https://miguelcobain.github.io/ember-paper/)
+* [unsplash.js](https://github.com/unsplash/unsplash-js)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
