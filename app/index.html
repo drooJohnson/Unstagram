@@ -15,7 +15,9 @@
     {{content-for "head-footer"}}
   </head>
   <body>
-    {{content-for "body"}}
+    <div class="layout-column layout-align-start-center">
+      {{content-for "body"}}
+    </div>
 
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/unstagram.js"></script>

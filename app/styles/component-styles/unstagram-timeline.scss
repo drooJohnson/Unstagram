@@ -1,4 +1,26 @@
 $avatar-size: 30px;
+
+@keyframes cardappear{
+  from {
+    transform: translateY(20px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1.0);
+    opacity: 1;
+  }
+}
+
+&{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+md-card {
+  animation: 500ms ease 0s cardappear;
+}
+
 .main-img {
   width: 400px;
 }

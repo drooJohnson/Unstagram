@@ -1,0 +1,44 @@
+$avatar-size: 30px;
+
+@keyframes loading{
+  0%{
+    opacity:0.5;
+  }
+  50%{
+    opacity:1;
+  }
+  100%{
+    opacity:0.5;
+  }
+}
+
+&{
+  z-index: -10;
+  box-sizing: border-box;
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 500px;
+  background: transparent;
+  transition: opacity 500ms ease-in-out;
+  opacity: 0;
+}
+&.loading{
+  transition: opacity 500ms ease-in-out;
+  animation: 1500ms ease-in-out 0s loading;
+  animation-iteration-count: infinite;
+  z-index: -10;
+  background: linear-gradient(to top, rgba(255,210,190,1) 10%, rgba(255,210,190,0));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &::after{
+    display: block;
+    position: absolute;
+    font-size: 1.2em;
+    text-align: center;
+    content: "LOADING";
+    bottom: 25%;
+  }
+}
