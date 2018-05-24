@@ -7,13 +7,12 @@ export default Component.extend({
   classNameBindings: ['loading'],
   classNames: ['infinite-scroll'],
   _scrollListener: null,
-  //loading: null,
   init(){
     this._super(...arguments);
   },
   didInsertElement(){
     this._super(...arguments);
-    this._scrollListener=bind(this,this.scrollHandler); //bind this component context
+    this._scrollListener=bind(this,this.scrollHandler);
     $(window).on('scroll', this._scrollListener);
   },
   willDestroy(){
@@ -51,16 +50,11 @@ export default Component.extend({
     let docViewTop = $(window).scrollTop();
     let docViewBottom = docViewTop + $(window).height();
 
-    let elem = this.element;
-    let rect = elem.getBoundingClientRect();
+    let rect = this.element.getBoundingClientRect();
 
     let elemTop = rect.top + window.pageYOffset;
-    // let elemBottom = elemTop + rect.height;
 
-    // This tests that the ENTIRE element is contained within the viewport
-    // return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-
-    // This tests whether there is ANY vertical overlap between the element and viewport
+    // Is the top of the element above or flush with the bottom of the viewport?
     return (elemTop <= docViewBottom);
   },
 });

@@ -23,10 +23,15 @@ export default Controller.extend({
       let photoCount = count.toString(); // unsplash requires the photo count as a string.
 
       let json = await get(this, 'unsplash').getRandomPhoto({count:photoCount});
+
+      // Handle unsuccessful requests to the Unsplash API
+      // Successful requests results in Arrays or Objects, so anything else
+      // suggests an unsucessful request.
       if ((typeof json !== "object" && !Array.isArray(json)) && json !== null) {
         set(this, 'errorMessage', json);
         return;
       }
+
       for (var i = 0; i < count; i++) {
         // Grab each photo from the array
         let photoJson = json[i];
@@ -36,7 +41,6 @@ export default Controller.extend({
         let photoScale = widthLimit / photoSize.x;
         let scaledPhotoSize = { x: photoSize.x * photoScale, y: photoSize.y * photoScale };
         // Trim data to only what is necessary...
-        // if (scaledPhotoSize.x != widthLimit) { console.log("The scaled photo width should be 400, it isn't. What have you done?!"); }
         let photo = {
           width: scaledPhotoSize.x,
           height: scaledPhotoSize.y,

@@ -21,15 +21,12 @@ export default Service.extend({
     let res = await get(this, 'unsplash').photos.getRandomPhoto(data);
     switch(res.status){
       case 200: {
-        // console.log("Request successful");
         let json = await res.json();
         return json;
       }
       case 403:
-        // console.log("Request failed likely due to authentication failure. The application may have gone over the Unsplash API's request-per-hour limit. You can sign up for a new developer account at https://unsplash.com/join, then go to https://unsplash.com/oauth/applications and add a new application. Once you've set up the new application, grab the Application ID, Access Key, and Secret Key from the 'Keys' section of that application's page — The URL should be something like https://unsplash.com/oauth/applications/ followed by the five numbers which also happen to be the Application ID — and add those to the 'unstagram/config/environment.js' file beneath the original entries, and comment out the original entries. Don't remove them, because you can switch between the two sets of IDs when you've reached the limit on one.");
         return ("Request failed likely due to authentication failure. The application may have gone over the Unsplash API's request-per-hour limit. You can sign up for a new developer account at https://unsplash.com/join, then go to https://unsplash.com/oauth/applications and add a new application. Once you've set up the new application, grab the Application ID, Access Key, and Secret Key from the 'Keys' section of that application's page — The URL should be something like https://unsplash.com/oauth/applications/ followed by the five numbers which also happen to be the Application ID — and add those to the 'unstagram/config/environment.js' file beneath the original entries, and comment out the original entries. Don't remove them, because you can switch between the two sets of IDs when you've reached the limit on one.");
       default:
-        // console.log("Something went wrong with the unsplash API request");
         return ("Something went wrong with the unsplash API request" + res.status);
     }
   }
